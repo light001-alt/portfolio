@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { ArrowRight, Briefcase, Phone } from "lucide-react";
+import { ArrowRight, Briefcase } from "lucide-react";
 import { HeroGlow } from "@/app/components/HeroGlow";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { WorkCard } from "@/components/ui/work-card";
+import { TallyContactForm } from "@/components/TallyContactForm";
 import { works } from "@/lib/works";
 
 const sectionPadding = "px-4 sm:px-6 lg:px-16";
@@ -150,7 +151,7 @@ export default function Home() {
 
         {/* 03 — Contact */}
         <BlurFade
-          className="flex flex-col gap-4 py-10 sm:gap-6 sm:py-14 lg:flex-row lg:items-center lg:gap-0"
+          className="flex flex-col gap-6 py-10 sm:py-14 lg:flex-row lg:items-start lg:gap-0"
           inView
           delay={0.24}
         >
@@ -160,14 +161,8 @@ export default function Home() {
               Contact
             </span>
           </div>
-          <div className="flex items-start gap-4 sm:items-center">
-            <Phone className="mt-1 h-5 w-5 shrink-0 text-muted-foreground/40 sm:mt-0" strokeWidth={1.5} />
-            <a
-              href="tel:01012345678"
-              className="break-all text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary sm:break-normal sm:text-2xl lg:text-3xl"
-            >
-              010-1234-5678
-            </a>
+          <div className="min-w-0 flex-1 lg:max-w-2xl">
+            <TallyContactForm />
           </div>
         </BlurFade>
       </section>
