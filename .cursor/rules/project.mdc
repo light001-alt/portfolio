@@ -1,0 +1,23 @@
+---
+description: 프로젝트 목적, 기술스택, 핵심 제약 사항 — 항상 적용
+alwaysApply: true
+---
+
+# 포트폴리오 프로젝트 규칙
+
+## 목적
+
+단순 이력서가 아닌 **AI 시대의 퍼스널 브랜딩 사이트**. 방문자가 "이 사람은 누구인가"를 빠르게 파악하고 인상에 남아야 한다.
+
+## 기술스택
+
+- **Next.js** — 코드 작성 전 `node_modules/next/dist/docs/` 에서 API 확인 (breaking changes 존재)
+- **ShadCN** — UI 컴포넌트는 커스텀 작성 전 ShadCN 우선 탐색
+- **Lucide** — 아이콘은 반드시 `lucide-react` 사용, 이모지·SVG 인라인 금지
+
+## 핵심 제약
+
+- 다크모드 지원 없음 — `dark:` Tailwind 클래스 추가 금지
+- 아바타 이미지는 플레이스홀더 유지 (나중에 교체 예정)
+- 메인 페이지는 Hero + About + Works 스크롤 구조, 작업물 상세는 `app/works/[slug]/page.tsx` 동적 라우팅
+- 작업물 데이터는 `lib/works.ts` 하드코딩 (추후 CMS/파일 분리 예정)

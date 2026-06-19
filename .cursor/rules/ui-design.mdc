@@ -1,0 +1,50 @@
+---
+description: UI 디자인 원칙 및 컴포넌트 작성 규칙 — TSX 파일 작업 시 적용
+globs: **/*.tsx
+alwaysApply: false
+---
+
+# UI 디자인 원칙
+
+## 무드
+
+**Apple의 깔끔함 + Linear의 정돈된 밀도** — 과장 없이 정확하고 절제된 UI.
+
+## 컴포넌트
+
+- ShadCN 컴포넌트 우선 사용, 없을 때만 직접 작성
+- Lucide 아이콘: `import { IconName } from "lucide-react"`
+- 이모지·인라인 SVG 사용 금지
+
+## Tailwind 작성 규칙
+
+- 색상은 CSS 변수 기반 유틸리티 사용 (`bg-background`, `text-foreground`, `text-muted-foreground` 등)
+- 임의 색상값(`bg-[#fff]`) 지양 — 필요 시 `globals.css` CSS 변수 추가
+- `dark:` 클래스 사용 금지
+
+## 레이아웃 패턴
+
+```tsx
+// ✅ 섹션 구조
+<section id="section-id" className="px-8 py-16 lg:px-16 lg:py-24">
+  <div className="mx-auto w-full max-w-4xl">
+    {/* content */}
+  </div>
+</section>
+
+// ✅ 메타 레이블 (Awwwards editorial 스타일)
+<span className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+  Label
+</span>
+```
+
+## 금지 패턴
+
+```tsx
+// ❌ 이모지 아이콘
+<span>💼</span>
+
+// ✅ Lucide 아이콘
+import { Briefcase } from "lucide-react"
+<Briefcase className="h-4 w-4" />
+```
